@@ -1,0 +1,40 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.input-title {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.input-field {
+  flex: 0 1 42px;
+  display: flex;
+  align-items: center;
+  background: var(---gray-00);
+  padding: 0.5rem;
+  border: 1px solid var(---gray-20);
+  border-radius: 6px;
+}
+
+.--date {
+  background: red;
+  width: 135px;
+  height: 30px;
+  font-size: 0.9rem;
+  background-color: var(---gray-00);
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid var(---gray-20);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.--date::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+}
