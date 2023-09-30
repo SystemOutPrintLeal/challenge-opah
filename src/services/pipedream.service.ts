@@ -23,7 +23,6 @@ export interface GetListOfPersons {
 
 export function PipedreamService({ baseUrl }: Props) {
   async function post<T>(body: T): Promise<AxiosResponse | null> {
-    console.log(body);
     try {
       return await axios.post(baseUrl, { ...body });
     } catch (error: any) {
