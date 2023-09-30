@@ -10,6 +10,14 @@
   margin-bottom: 4px;
 }
 
+.input-description {
+  font-size: 12px;
+}
+
+.--error {
+  color: red;
+}
+
 .input-field {
   flex: 0 1 42px;
   display: flex;
@@ -21,7 +29,6 @@
 }
 
 .--date {
-  background: red;
   width: 135px;
   height: 30px;
   font-size: 0.9rem;

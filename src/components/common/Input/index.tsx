@@ -24,23 +24,30 @@ function Title({ children, name, style = {} }: PropsTitle) {
 
 export interface PropsInput extends Props {
   value: string | number;
+  error: string | null;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   style?: React.CSSProperties;
 }
 
-function InputText({ value, onChange, style = {} }: PropsInput) {
+function InputText({ value, error, onChange, style = {} }: PropsInput) {
   return (
-    <div className="input-field" style={{ ...style }}>
-      <input value={value} onChange={onChange} />
-    </div>
+    <>
+      <div className="input-field" style={{ ...style }}>
+        <input value={value} onChange={onChange} style={{ flex: 1 }} />
+      </div>
+      {!!error && <p className="input-description --error">{error}</p>}
+    </>
   );
 }
 
-function InputDate({ value, onChange, style = {} }: PropsInput) {
+function InputDate({ value, error, onChange, style = {} }: PropsInput) {
   return (
-    <div className="input-field --date" style={{ ...style }}>
-      <input type="date" value={value} onChange={onChange} />
-    </div>
+    <>
+      <div className="input-field --date" style={{ ...style }}>
+        <input type="date" value={value} onChange={onChange} />
+      </div>
+      {!!error && <p className="input-description --error">{error}</p>}
+    </>
   );
 }
 
