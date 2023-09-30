@@ -12,23 +12,27 @@ Para rodar este projeto em sua máquina local, siga os passos abaixo:
 
 2. Clone este repositório em sua máquina usando o comando:
 
-   - Navegue até a pasta do projeto:
+```bash
+ git clone https://github.com/seu-usuario/challenge-opah.git
+```
 
-   ```bash
-   cd challenge-opah
-   ```
+3.  Navegue até a pasta do projeto:
 
-   - Instale as dependências do projeto:
+```bash
+cd challenge-opah
+```
 
-   ```bash
-   yarn
-   ```
+4.  Instale as dependências do projeto:
 
-   - Inicie o servidor de desenvolvimento:
+```bash
+yarn
+```
 
-   ```bash
-   yarn run dev
-   ```
+5.  Inicie o servidor de desenvolvimento:
+
+```bash
+yarn run dev
+```
 
 <!-- Imagem à esquerda -->
 <img src="src/assets/form.jpeg" alt="Formulário" align="left" width="350"/>
