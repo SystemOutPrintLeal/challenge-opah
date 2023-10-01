@@ -41,11 +41,11 @@ export function ListOfPersons() {
     loadListOfPersons();
   }, []);
 
-  async function loadListOfPersons() {
+  async function loadListOfPersons(value: number = currentPage) {
     const response = await PipedreamService({
       baseUrl: "https://eou3ns36bjp3reg.m.pipedream.net",
     }).post<GetListOfPersons>({
-      offset: currentPage * DEFAULT_LIMIT,
+      offset: value * DEFAULT_LIMIT,
       limit: DEFAULT_LIMIT,
     });
     if (response?.status === 400) {
@@ -58,13 +58,12 @@ export function ListOfPersons() {
       toast.error("something went wrong... 😢");
       return false;
     }
-
-    setCurrentList(currentList);
+    setCurrentList(response.data);
     return true;
   }
 
   async function handlePage(value: number) {
-    const status = await loadListOfPersons();
+    const status = await loadListOfPersons(value);
     if (status) {
       return setCurrentPage(value);
     }
@@ -122,7 +121,7 @@ export function ListOfPersons() {
         <button
           onClick={() => handlePage(currentPage + 1)}
           disabled={
-            currentPage === Math.ceil(currentList?.total ?? 0 / DEFAULT_LIMIT)
+            currentPage + 1 === Math.ceil(currentList!.total / DEFAULT_LIMIT)
           }
         >
           {">"}

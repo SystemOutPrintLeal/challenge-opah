@@ -142,17 +142,14 @@ export function CreatePersonForm() {
           onChange={handleInput("birth_date")}
         />
       </InputWrapper>
-      <div
-        className="button-wrapper"
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          if (!loading) {
-            onSubmit(values);
-          }
-        }}
-      >
+      <div className="button-wrapper" style={{ cursor: "pointer" }}>
         <a
           className="button"
+          onClick={() => {
+            if (!loading) {
+              onSubmit(values);
+            }
+          }}
           style={{ backgroundColor: loading ? "var(---gray-20)" : "" }}
         >
           <strong>{loading ? "salvando..." : "salvar"}</strong>

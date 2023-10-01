@@ -34,8 +34,40 @@ yarn
 yarn run dev
 ```
 
+## Exemplo de Requisições
+
+- Insert a person
+
+  - url: https://eoobbrocsh5s3k.m.pipedream.net
+  - payload:
+
+  ```json
+  {
+    "id": "string",
+    "data": {
+      "name": "string",
+      "email": "string",
+      "cpf": "string",
+      "birth_date": "string"
+    }
+  }
+  ```
+
+  - Get list of persons
+  - url: https://eou3ns36bjp3reg.m.pipedream.net
+  - payload:
+
+  ```json
+  {
+    "offset": 0,
+    "limit": 5
+  }
+  ```
+
 <!-- Imagem à esquerda -->
 <img src="src/assets/form.jpeg" alt="Formulário" align="left" width="350"/>
 
 <!-- Imagem à direita -->
 <img src="src/assets/list.jpeg" alt="Lista" align="right" width="350"/>
+
+---
